@@ -10,6 +10,7 @@ public class Cliente implements Autentica{
    }
 
    public String getNome(){
+       System.out.println(this.nome);
        return this.nome;
    }
 
@@ -30,6 +31,7 @@ public class Cliente implements Autentica{
 	System.out.println("Autenticado!");
 	return true;
 }
+
 
 
 }

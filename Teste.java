@@ -22,10 +22,23 @@ public class Teste{
         // };
        //clientes.forEach(consumidor);
 
-        clientes.forEach(c -> System.out.println(c.getNome())); //EXPRESSÃO LAMBDA
+        //clientes.forEach(c -> System.out.println(c.getNome())); //EXPRESSÃO LAMBDA
+
+        clientes.forEach(Cliente::getNome); //METHOD REFERENCE
+
+
+        Cliente c3 = new Cliente("Ana", false, "333");
+
+        Consumer<Cliente> consumidor1 = Cliente::getNome; //METHOD REFERENCE
+        consumidor1.accept(c3);
+
+        Runnable r1 = c3::getNome; //METHOD REFERENCE
+        r1.run();
+
+
 
         Runnable r = () -> System.out.println("Olá mundo!"); //EXPRESSÃO LAMBDA
         new Thread(r).start();
-
+        
    }
 }
