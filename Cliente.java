@@ -2,11 +2,13 @@ public class Cliente implements Autentica{
    private String nome;
    private boolean status;
    private String senha;
+   private int pontos;
 
-   public Cliente(String nome, boolean status, String senha){
+   public Cliente(String nome, boolean status, String senha, int pontos){
        this.nome = nome;
        this.status = status;
        this.senha = senha;
+       this.pontos = pontos;
    }
 
    public String getNome(){
@@ -22,6 +24,9 @@ public class Cliente implements Autentica{
        return this.senha;
    }
 
+   public int getPontos(){
+       return this.pontos;
+   }
 
     public boolean autenticaSenha(String senha) {
 	if(this.senha != senha){
